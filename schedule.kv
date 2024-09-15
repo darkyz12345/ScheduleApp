@@ -1,0 +1,45 @@
+MDBoxLayout:
+    md_bg_color: app.theme_cls.surfaceColor
+    orientation: 'vertical'
+
+    BoxLayout:
+        orientation: 'vertical'
+        size_hint_y: 0.2
+        pos_hint_y: 'top'
+        BoxLayout:
+            pos_hint_y: 'top'
+            MDIcon:
+                icon: 'calendar-month'
+            MDLabel:
+                id: month_lbl
+                text: "MONTH"
+                adaptive_size: True
+                halign: 'center'
+                valign: 'center'
+                size_hint_y: None
+                height: self.texture_size[1]
+    BoxLayout:
+        size_hint_y: .9
+        MDScrollView:
+            MDList:
+                id: schedule_list
+    BoxLayout:
+        size_hint_y: .1
+        MDButton:
+            id: left_button
+            style: "elevated"
+            theme_width: "Custom"
+            size_hint_x: .5
+
+            MDButtonIcon:
+                icon: "arrow-left-bold"
+                pos_hint: {"center_x": .5, "center_y": .5}
+        MDButton:
+            id: right_button
+            style: "elevated"
+            theme_width: "Custom"
+            size_hint_x: .5
+
+            MDButtonIcon:
+                icon: "arrow-right-bold"
+                pos_hint: {"center_x": .5, "center_y": .5}
